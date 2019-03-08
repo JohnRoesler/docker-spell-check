@@ -1,0 +1,12 @@
+version: '3.2'
+services:
+  docker-spell-check:
+    image: johnroesler/docker-spell-check:latest
+    volumes:
+      - type: bind
+        source: /Users/me/docs
+        target: /docs
+    environment:
+      PERSONAL_WORDS: '/docs/my_words.pws'
+      CHECK_DIR: '/docs/interesting_content/'
+      CHECK_NAME: '*.md'
